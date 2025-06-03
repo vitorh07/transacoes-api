@@ -5,6 +5,7 @@ import com.prjvitor.transacoes_api.services.TransacaoService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @RestController
@@ -47,5 +48,15 @@ public class TransacaoController {
     public ResponseEntity<Void> deletar(@PathVariable Long id) {
         transacaoService.deletarTransacao(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @PostMapping("/transferencia")
+    public ResponseEntity<Transacao> transferir(
+            @RequestParam Long contaOrigemId,
+            @RequestParam Long contaDestinoId,
+            @RequestParam BigDecimal valor,
+            @RequestParam(required = false) String descricao) {
+        Transacao transacao = transacaoService.transferir(contaOrigemId, contaDestinoId, valor, descricao);
+        return ResponseEntity.ok(transacao);
     }
 }
