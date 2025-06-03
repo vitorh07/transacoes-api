@@ -23,12 +23,6 @@ public class Conta {
 
     private BigDecimal saldo = BigDecimal.ZERO;
 
-    private TipoConta tipoConta;
 
     private LocalDateTime dataCriacao = LocalDateTime.now();
-
-    public enum TipoConta {
-        CORRENTE,
-        POUPANCA
-    }
 }
