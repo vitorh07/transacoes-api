@@ -2,6 +2,25 @@
 
 API REST para gerenciamento de usuários, contas e transações bancárias.
 
+## Como executar
+
+1. **Pré-requisitos:**  
+   - Java 17+  
+   - Maven
+
+2. **Clone o repositório:**
+   ```sh
+   git clone https://github.com/vitorh07/transacoes-api.git
+   cd moedas-api
+   ```
+3. **Instale as dependências e execute o projeto:**
+    ```sh
+    ./mvnw spring-boot:run
+    ```
+4. **Acesse a API:**
+    - O serviço estará disponível em:
+    http://localhost:8080/moedas
+
 ## Endpoints principais
 
 - **Usuários:** `/api/usuarios`
